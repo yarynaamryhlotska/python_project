@@ -20,4 +20,4 @@ def plot_ground_map(ground_map):
     plt.title(f"Ground Map of size {rows}x{cols}")
     plt.xlabel("Width")
     plt.ylabel("Height")
-    plt.show()
+    

@@ -20,6 +20,7 @@ def random_bounce_velocity(v):
     vx = v * math.cos(angle)
     vy = v * math.sin(angle)
     return vx, vy
+
 def random_direction(exclude_direction=None):
     directions = [
         (0, 1),  
