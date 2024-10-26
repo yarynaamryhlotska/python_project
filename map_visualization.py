@@ -2,33 +2,18 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
 def plot_ground_map(ground_map):
-    visual_map = []
-    for row in ground_map:
-        visual_row = []
-        for cell in row:
-            if cell == 'L':
-                visual_row.append(0)   
-            elif cell == 'O':
-                visual_row.append(1)   
-            elif cell == 'S':
-                visual_row.append(2)   
-        visual_map.append(visual_row)
+    color_map = {'L': 0, 'O': 1, 'S': 2, 'C': 3, 'E': 2}  # C - скошена трава, E - кінцева точка (жовта)
 
-   
+    visual_map = [[color_map[cell] for cell in row] for row in ground_map]
     visual_map.reverse()
 
-    
     rows = len(visual_map)
     cols = len(visual_map[0])
 
-   
-    col_map = ListedColormap(['green', 'black', 'yellow'], 'indexed')
+    col_map = ListedColormap(['green', 'black', 'yellow', 'red'], 'indexed')  # Додано червоний для скошеної трави
 
-   
     plt.figure()
     plt.pcolormesh(visual_map, edgecolors='k', linewidth=2, cmap=col_map)
-
-    
     ax = plt.gca()
     ax.set_yticks(range(0, rows + 1, 1))
     ax.set_xticks(range(0, cols + 1, 1))
