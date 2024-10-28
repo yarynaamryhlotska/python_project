@@ -5,7 +5,6 @@ def plot_ground_map(ground_map):
     color_map = {'L': 0, 'O': 1, 'S': 2, 'C': 3, 'E': 2}  
 
     visual_map = [[color_map[cell] for cell in row] for row in ground_map]
-    visual_map.reverse()
 
     rows = len(visual_map)
     cols = len(visual_map[0])
@@ -20,4 +19,5 @@ def plot_ground_map(ground_map):
     plt.title(f"Ground Map of size {rows}x{cols}")
     plt.xlabel("Width")
     plt.ylabel("Height")
+    plt.gca().invert_yaxis()
     

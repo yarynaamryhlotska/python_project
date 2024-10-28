@@ -1,9 +1,8 @@
 from read_map import read_map
 from map_visualization import plot_ground_map
-from lawn_mower import find_start_position, random_bounce_velocity, mow_lawn, random_direction
+from lawn_mower import find_start_position, mow_lawn
 from move_visualization import move_visualization
 import matplotlib.pyplot as plt
-
 
 def main():
     filename = 'data/small.csv'
@@ -17,22 +16,19 @@ def main():
         return
     print("Start position:", (start_x, start_y))
 
-    current_direction = random_direction()
-    path = []  
+    initial_x, initial_y = start_x, start_y
+    path = [(initial_x, initial_y)]
+    direction = None  
 
-    for _ in range(4040):  
-        if ground_map[start_y][start_x] == 'S':
-            ground_map[start_y][start_x] = 'C'
-        elif ground_map[start_y][start_x] == 'E':  
-            ground_map[start_y][start_x] = 'C'
-        
-        new_x, new_y, current_direction = mow_lawn(ground_map, start_x, start_y)
-        print(f"Moved to new position: ({new_x}, {new_y}) with direction {current_direction}")
+    for _ in range(650):  
+        new_x, new_y, direction = mow_lawn(ground_map, start_x, start_y, direction)
+        print(f"Moved to new position: ({new_x}, {new_y}) with direction {direction}")
 
         path.append((new_x, new_y))
         start_x, start_y = new_x, new_y
+
     plot_ground_map(ground_map)
-    move_visualization(path, start_x, start_y, ground_map)
+    move_visualization(path, initial_x, initial_y, ground_map, start_x, start_y)
     plt.show()
     
 
