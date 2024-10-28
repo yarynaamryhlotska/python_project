@@ -12,7 +12,7 @@ def move_visualization(path, start_x, start_y, ground_map):
     ax.plot(start_x, start_y, 'bo', label='Start Position')  
 
     path_x, path_y = zip(*path)  
-    ax.plot(path_x, path_y, 'go-', label='Mower Path')  
+    ax.plot(path_x, path_y, 'g-', label='Mower Path')  
 
     plt.legend()
     plt.gca().invert_yaxis()

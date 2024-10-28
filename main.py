@@ -20,7 +20,7 @@ def main():
     current_direction = random_direction()
     path = []  
 
-    for _ in range(200):  
+    for _ in range(4040):  
         if ground_map[start_y][start_x] == 'S':
             ground_map[start_y][start_x] = 'C'
         elif ground_map[start_y][start_x] == 'E':  
