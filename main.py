@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    filename = 'data/tricky25x25.csv'
+    filename = 'data/small.csv'
     ground_map = read_map(filename)
     if ground_map is None:
         return
@@ -18,9 +18,9 @@ def main():
     print("Start position:", (start_x, start_y))
 
     current_direction = random_direction()
-    path = []  # Список для зберігання шляху косарки
+    path = []  
 
-    for _ in range(25000):  
+    for _ in range(200):  
         if ground_map[start_y][start_x] == 'S':
             ground_map[start_y][start_x] = 'C'
         elif ground_map[start_y][start_x] == 'E':  
@@ -32,10 +32,8 @@ def main():
         path.append((new_x, new_y))
         start_x, start_y = new_x, new_y
     plot_ground_map(ground_map)
-    # Викликаємо функцію візуалізації
     move_visualization(path, start_x, start_y, ground_map)
     plt.show()
     
-
 
 main()

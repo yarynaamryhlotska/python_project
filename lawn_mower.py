@@ -9,17 +9,20 @@ def find_start_position(ground_map):
                 return x, y
     return None
 
+
 def next_step(x, y, vx, vy, delta_t):
     new_x = x + vx * delta_t
     new_y = y + vy * delta_t
     
     return new_x, new_y
 
+
 def random_bounce_velocity(v):
     angle = random.uniform(0, 2 * math.pi)
     vx = v * math.cos(angle)
     vy = v * math.sin(angle)
     return vx, vy
+
 
 def random_direction(exclude_direction=None):
     directions = [
@@ -37,6 +40,7 @@ def random_direction(exclude_direction=None):
         directions = [d for d in directions if (d[0], d[1]) != (-exclude_direction[0], -exclude_direction[1])]
     
     return random.choice(directions)
+
 
 def mow_lawn(ground_map, x, y):
     direction = random_direction()  

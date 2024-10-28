@@ -1,1 +1,1 @@
-# python_project
+# python project made by Sofiia and Yaryna
