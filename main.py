@@ -3,7 +3,7 @@ from map_visualization import plot_ground_map
 from lawn_mower import find_start_position, mow_lawn
 from move_visualization import move_visualization
 from map_area_analysis import calculate_map_area  # Import the new function
-from plot_percentage_chart import plot_lawn_percentage_chart # Import the new function
+from plot_percentage_chart import plot_lawn_percentage_chart, plot_cut_vs_uncut_chart
 import matplotlib.pyplot as plt
 
 def main():
@@ -12,8 +12,6 @@ def main():
     if ground_map is None:
         return
 
-    # Calculate and display area information
-    calculate_map_area(ground_map)
     # Calculate and display area information
     total_area, lawn_area, lawn_percentage = calculate_map_area(ground_map)
 
@@ -27,7 +25,12 @@ def main():
     path = [(initial_x, initial_y)]
     direction = None  
 
-    for _ in range(10000):  
+    speed = 0.3  
+    work_hours = 2  
+    total_time_seconds = work_hours * 3600 
+    max_steps = int(total_time_seconds * speed)  # calculate max number of steps based on speed and time
+
+    for _ in range(max_steps):  
         new_x, new_y, direction = mow_lawn(ground_map, start_x, start_y, direction)
         print(f"Moved to new position: ({new_x}, {new_y}) with direction {direction}")
 
@@ -36,9 +39,10 @@ def main():
 
     plot_ground_map(ground_map, total_area, lawn_area, lawn_percentage)
     move_visualization(path, initial_x, initial_y, ground_map, start_x, start_y)
-    #new visualization
+    # New visualization for lawn percentage
     plot_lawn_percentage_chart(lawn_percentage)
-    plt.show()
+    plot_cut_vs_uncut_chart(ground_map)
     
+    plt.show()
 
 main()
