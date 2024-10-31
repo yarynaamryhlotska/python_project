@@ -6,13 +6,13 @@ def plot_lawn_percentage_chart(lawn_percentage):
     labels = 'Lawn Area', 'Other Area'
     sizes = [lawn_percentage, 100 - lawn_percentage]
     colors = ['green', 'gray']
-    explode = (0.1, 0)  # "explode" the lawn area slice for emphasis
+    explode = (0.1, 0) 
 
     plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
     plt.title("Lawn Area Percentage")
-    plt.axis('equal')  # Equal aspect ratio ensures that pie chart is drawn as a circle.
+    plt.axis('equal') 
 
-def plot_cut_vs_uncut_chart(ground_map):
+def plot_cut_uncut_chart(ground_map):
     total_lawn_cells = 0
     cut_cells = 0
 
