@@ -14,8 +14,11 @@ def plot_ground_map(ground_map, total_area, lawn_area, lawn_percentage):
     plt.figure()
     plt.pcolormesh(visual_map, edgecolors='k', linewidth=2, cmap=col_map)
     ax = plt.gca()
-    ax.set_yticks(range(0, rows + 1, 1))
-    ax.set_xticks(range(0, cols + 1, 1))
+    ax.set_xticks([x + 0.5 for x in range(cols)])
+    ax.set_yticks([y + 0.5 for y in range(rows)])
+    ax.set_xticklabels(range(0, cols))
+    ax.set_yticklabels(range(0, rows))
+
     plt.title(f"Ground Map of size {rows}x{cols}")
     plt.xlabel("Width")
     plt.ylabel("Height")

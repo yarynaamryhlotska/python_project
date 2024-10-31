@@ -27,7 +27,7 @@ def main():
     path = [(initial_x, initial_y)]
     direction = None  
 
-    for _ in range(1600):  
+    for _ in range(10000):  
         new_x, new_y, direction = mow_lawn(ground_map, start_x, start_y, direction)
         print(f"Moved to new position: ({new_x}, {new_y}) with direction {direction}")
 
