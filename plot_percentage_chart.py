@@ -12,13 +12,14 @@ def plot_lawn_percentage_chart(lawn_percentage):
     plt.title("Lawn Area Percentage")
     plt.axis('equal') 
 
+
 def plot_cut_uncut_chart(ground_map):
     total_lawn_cells = 0
     cut_cells = 0
 
     for row in ground_map:
         for cell in row:
-            if cell == 'L' or cell == 'C':  
+            if cell == 'L' or cell == 'C' or cell == 'S':  
                 total_lawn_cells += 1
                 if cell == 'C':  
                     cut_cells += 1

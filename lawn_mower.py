@@ -25,6 +25,13 @@ def random_direction(exclude_direction=None):
     
     return random.choice(directions)
 
+
+def is_lawn_left(ground_map):
+    for row in ground_map:
+        if 'L' in row:
+            return True
+    return False
+
 def mow_lawn(ground_map, x, y, direction=None):
     if direction is None:
         direction = random_direction()

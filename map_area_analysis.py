@@ -5,7 +5,7 @@ def calculate_map_area(ground_map):
     for row in ground_map:
         for cell in row:
             total_area += 1
-            if cell == 'L':  # Assuming 'L' represents lawn
+            if cell == 'L' or cell == 'S':  
                 lawn_area += 1
 
     lawn_percentage = (lawn_area / total_area) * 100 if total_area > 0 else 0

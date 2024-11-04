@@ -27,4 +27,4 @@ def move_visualization(path, initial_x, initial_y, ground_map, start_x, start_y)
     ax.plot(start_x + 1, start_y + 1, 'ro', label='End Position')
     
     plt.legend()
-    plt.gca().invert_yaxis()  
+    plt.gca().invert_yaxis()  # Invert y-axis - y starts in the upper left corner
