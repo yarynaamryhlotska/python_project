@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    filename = 'data/simple.csv'
+    filename = 'data/small.csv'
     ground_map = read_map(filename)
     if ground_map is None:
         return
@@ -26,7 +26,7 @@ def main():
     direction = None  
 
     speed = 0.3
-    work_hours = 0.3
+    work_hours = 2
     total_time_seconds = work_hours * 3600 
     max_steps = int(total_time_seconds * speed)  
 
