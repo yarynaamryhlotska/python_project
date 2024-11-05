@@ -64,8 +64,9 @@ def main():
         print("2 - Mower Path Visualization")
         print("3 - Lawn Area Percentage Chart")
         print("4 - Cut and Uncut Lawn Area Chart")
-        print("5 - Detailed Ground Map Visualization")
-        print("6 - Detailed Mower Path Visualization")
+        print("5 - Detailed: Ground Map Visualization")
+        print("6 - Detailed: Mower Path Visualization")
+        print("7 - Detailed: Cut and Uncut Lawn Area Chart")
         print("0 - Exit")
 
         choice = input("Enter your choice: ")
@@ -87,6 +88,9 @@ def main():
             plt.show()
         elif choice == '6':
             move_visualization(det_path, det_initial_x, det_initial_y, detailed_map, det_start_x, det_start_y)
+            plt.show()
+        elif choice == '7':
+            plot_cut_uncut_chart(detailed_map)
             plt.show()
         elif choice == '0':
             print("Exiting the program.")
