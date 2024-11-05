@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
 def plot_ground_map(ground_map, total_area, lawn_area, lawn_percentage):
-    color_map = {'O': 0, 'L': 1, 'S': 2, 'C': 3, 'E': 2}  
+    color_map = {'O': 0, 'L': 1, 'S': 2, 'C': 3}  
 
     visual_map = [[color_map[cell] for cell in row] for row in ground_map]
 

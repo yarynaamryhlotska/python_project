@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    filename = 'data/small.csv'
+    filename = 'data/my_map.csv'
     ground_map = read_map(filename)
     if ground_map is None:
         return
